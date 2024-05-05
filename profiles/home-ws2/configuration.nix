@@ -1,11 +1,4 @@
-# LSuite Desktop Configuration
-#
-# Version: 1.0.0
-# Written: May 4, 2024
-
-{ config, lib, pkgs, ... }:
-
-{
+{ config, lib, pkgs, ... }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
