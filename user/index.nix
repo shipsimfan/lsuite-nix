@@ -12,7 +12,6 @@
     };
     password = lib.mkOption {
       type = lib.types.nonEmptyStr;
-      default = "$y$j9T$YGUvXrTnk/GU125xVA5yx/$GRqmIwm2bkl.NhHectU335c5S3UXxRNzA0cCLKvzD83";
       description = "The hashed password for the user";
     };
     keys = lib.mkOption {

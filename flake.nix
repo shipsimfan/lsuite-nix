@@ -11,20 +11,14 @@
   };
 
   outputs = {self, ...}@inputs: {
-    nixosConfigurations = {
-      # nix-ws1 Hyper-V virtual machines
-      home-nixdev1 = inputs.nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [ 
-          # Dependencies
-          inputs.vscode-server.nixosModules.default
+    modules = [
+      # Dependencies
+      inputs.vscode-server.nixosModules.default
 
-          # Profile
-          ./profiles/home-nixdev1/configuration.nix
-        ];
-      };
-
-    };
+      # Profile
+      ./apps/index.nix
+      ./system/index.nix
+      ./user/index.nix
+    ];
   };
-  
 }
