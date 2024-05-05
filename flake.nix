@@ -11,14 +11,16 @@
   };
 
   outputs = {self, ...}@inputs: {
-    modules = [
-      # Dependencies
-      inputs.vscode-server.nixosModules.default
+    nixosModules.default = {
+      imports = [
+        # Dependencies
+        inputs.vscode-server.nixosModules.default
 
-      # Profile
-      ./apps/index.nix
-      ./system/index.nix
-      ./user/index.nix
-    ];
+        # Profile
+        ./apps/index.nix
+        ./system/index.nix
+        ./user/index.nix
+      ];
+    };
   };
 }
