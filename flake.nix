@@ -11,9 +11,18 @@
   };
 
   outputs = {self, ...}@inputs: {
-    templates.default = {
-      path = ./templates/system;
-      description = "A minimal system configuration";
+    templates = {
+      system = {
+        path = ./templates/system;
+        description = "A minimal system configuration";
+      };
+
+      dev = {
+        path = ./templates/dev;
+        description = "A development environment for lsuite";
+      };
+      
+      default = self.templates.system;
     };
 
     nixosModules.default = {
